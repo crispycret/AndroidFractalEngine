@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MandelbrotSettingsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/mandelbrot_imaginaryEnd"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number|numberDecimal"
+            android:minHeight="48dp"
+            android:text="2.0"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/textImaginaryEnd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textImaginaryEnd"
+            app:layout_constraintTop_toBottomOf="@+id/textImaginaryEnd" />
+
+        <TextView
+            android:id="@+id/textImaginary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="IMAGINARY"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_realStart" />
+
+        <TextView
+            android:id="@+id/textColorRange"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="COLOR RANGE"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_imaginaryEnd" />
+
+        <TextView
+            android:id="@+id/textImaginaryStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="START"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/mandelbrot_realStart"
+            app:layout_constraintStart_toStartOf="@+id/mandelbrot_realStart"
+            app:layout_constraintTop_toBottomOf="@+id/textImaginary" />
+
+        <EditText
+            android:id="@+id/mandelbrot_imaginaryStart"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number|numberDecimal"
+            android:minHeight="48dp"
+            android:text="-2.0"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/textImaginaryStart"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textImaginaryStart"
+            app:layout_constraintTop_toBottomOf="@+id/textImaginaryStart" />
+
+        <EditText
+            android:id="@+id/mandelbrot_colorRange"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="numberSigned|number"
+            android:minHeight="48dp"
+            android:text="32"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/mandelbrot_imaginaryEnd"
+            app:layout_constraintStart_toEndOf="@+id/mandelbrot_imaginaryStart"
+            app:layout_constraintTop_toBottomOf="@+id/textColorRange" />
+
+        <TextView
+            android:id="@+id/textImaginaryEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="END"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/mandelbrot_realEnd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mandelbrot_realEnd"
+            app:layout_constraintTop_toBottomOf="@+id/textImaginary" />
+
+        <TextView
+            android:id="@+id/textReal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="REAL"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textGraphDimensions" />
+
+        <EditText
+            android:id="@+id/mandelbrot_realEnd"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number|numberDecimal"
+            android:minHeight="48dp"
+            android:text="1.0"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/textRealEnd"
+            app:layout_constraintStart_toStartOf="@+id/textRealEnd"
+            app:layout_constraintTop_toBottomOf="@+id/textRealEnd" />
+
+        <TextView
+            android:id="@+id/textFractalType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Mandelbrot Settings"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/mandelbrot_realStart"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:inputType="number|numberDecimal"
+            android:minHeight="48dp"
+            android:text="-2.0"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/textRealStart"
+            app:layout_constraintHorizontal_bias="0.004"
+            app:layout_constraintStart_toStartOf="@+id/mandelbrot_maxIterationsLabel"
+            app:layout_constraintTop_toBottomOf="@+id/textRealStart" />
+
+        <TextView
+            android:id="@+id/textRealEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="END"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/mandelbrot_escapeRadius"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mandelbrot_escapeRadius"
+            app:layout_constraintTop_toBottomOf="@+id/textReal" />
+
+        <TextView
+            android:id="@+id/textRealStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="START"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/mandelbrot_maxIterations"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="@+id/mandelbrot_maxIterations"
+            app:layout_constraintTop_toBottomOf="@+id/textReal" />
+
+        <EditText
+            android:id="@+id/mandelbrot_maxIterations"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="numberSigned|number"
+            android:minHeight="48dp"
+            android:text="80"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/mandelbrot_maxIterationsLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mandelbrot_maxIterationsLabel"
+            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_maxIterationsLabel" />
+
+        <EditText
+            android:id="@+id/mandelbrot_escapeRadius"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="numberSigned|number"
+            android:minHeight="48dp"
+            android:text="2"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/mandelbrot_escapeRadiusLabel"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/mandelbrot_escapeRadiusLabel"
+            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_escapeRadiusLabel" />
+
+        <TextView
+            android:id="@+id/mandelbrot_escapeRadiusLabel"
+            android:layout_width="108dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="ESCAPE RADIUS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.785"
+            app:layout_constraintStart_toEndOf="@+id/mandelbrot_maxIterationsLabel"
+            app:layout_constraintTop_toBottomOf="@+id/textFractalType" />
+
+        <TextView
+            android:id="@+id/mandelbrot_maxIterationsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="MAX ITERATIONS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textFractalType" />
+
+        <Button
+            android:id="@+id/mandelbrot_resetBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="Reset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_colorRange" />
+
+        <TextView
+            android:id="@+id/textGraphDimensions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Graph Dimensions"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_maxIterations" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
