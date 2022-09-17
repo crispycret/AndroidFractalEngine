@@ -14,8 +14,9 @@ import android.widget.Spinner;
 
 import com.example.fractalengine.fragments.BundlingFragment;
 import com.example.fractalengine.fragments.MandelbrotSettingsFragment;
-import com.example.fractalengine.R;
 import com.example.fractalengine.fragments.SierpinskiSettingsFragment;
+import com.example.fractalengine.R;
+//import com.example.fractalenginv1.R;
 
 import java.util.ArrayList;
 

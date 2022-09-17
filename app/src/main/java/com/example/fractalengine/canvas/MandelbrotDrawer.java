@@ -81,11 +81,8 @@ public class MandelbrotDrawer extends FractalDrawer{
      * @param view
      */
     public void draw(View view) {
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-
         Canvas canvas = surfaceHolder.lockCanvas();
-        _draw(canvas, paint);
+        _draw(canvas);
         surfaceHolder.unlockCanvasAndPost(canvas);
     }
 
@@ -94,9 +91,10 @@ public class MandelbrotDrawer extends FractalDrawer{
      * Create a random schema of colors to draw from.
      * C
      * @param canvas
-     * @param paint
      */
-    private void _draw(Canvas canvas, Paint paint) {
+    private void _draw(Canvas canvas) {
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
 
         // Random schema of colors.
         int[] colors = new int[64];
