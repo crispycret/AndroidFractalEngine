@@ -62,6 +62,8 @@ public class SierpinskiDrawer extends FractalDrawer {
         int width = canvas.getWidth();
         int height = canvas.getHeight();
 
+
+
         // Since the Sierpinksi is a perfect triangle we must center the height
         // Find the difference of the width and height and divide by two
 
