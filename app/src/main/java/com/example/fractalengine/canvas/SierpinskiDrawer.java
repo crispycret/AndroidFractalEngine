@@ -2,7 +2,9 @@ package com.example.fractalengine.canvas;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -62,7 +64,28 @@ public class SierpinskiDrawer extends FractalDrawer {
         int width = canvas.getWidth();
         int height = canvas.getHeight();
 
+//        paint.setShader(new LinearGradient(
+//                0, 0, 0, height, Color.BLACK, Color.WHITE, Shader.TileMode.MIRROR
+//        ));
 
+//
+//        gradient = ctx.createLinearGradient(canvasHeight/2, 0, canvasHeight, canvasWidth);
+//        gradient.addColorStop(0, "magenta");
+//        gradient.addColorStop(0.5 ,"blue");
+//        gradient.addColorStop(1.0, "red");
+
+
+
+        int colors[] = new int[3];
+        float[] colorPositions = new float[4];
+
+        colors[0] = Color.MAGENTA;
+        colors[1] = Color.BLUE;
+        colors[2] = Color.RED;
+
+        paint.setShader(new LinearGradient(
+                0, height/2, width, height, colors, null, Shader.TileMode.MIRROR
+        ));
 
         // Since the Sierpinksi is a perfect triangle we must center the height
         // Find the difference of the width and height and divide by two
