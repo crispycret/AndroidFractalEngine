@@ -132,7 +132,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textRealEnd" />
 
         <TextView
-            android:id="@+id/textFractalType"
+            android:id="@+id/mandelbrot_settingsLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -157,7 +157,7 @@
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="@+id/textRealStart"
             app:layout_constraintHorizontal_bias="0.004"
-            app:layout_constraintStart_toStartOf="@+id/mandelbrot_maxIterationsLabel"
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_depthLabel"
             app:layout_constraintTop_toBottomOf="@+id/textRealStart" />
 
         <TextView
@@ -194,10 +194,10 @@
             android:minHeight="48dp"
             android:text="80"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/mandelbrot_maxIterationsLabel"
+            app:layout_constraintEnd_toEndOf="@+id/sierpinski_depthLabel"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/mandelbrot_maxIterationsLabel"
-            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_maxIterationsLabel" />
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_depthLabel"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_depthLabel" />
 
         <EditText
             android:id="@+id/mandelbrot_escapeRadius"
@@ -209,13 +209,13 @@
             android:minHeight="48dp"
             android:text="2"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/mandelbrot_escapeRadiusLabel"
+            app:layout_constraintEnd_toEndOf="@+id/sierpinski_strokeWidthLabel"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/mandelbrot_escapeRadiusLabel"
-            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_escapeRadiusLabel" />
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_strokeWidthLabel"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_strokeWidthLabel" />
 
         <TextView
-            android:id="@+id/mandelbrot_escapeRadiusLabel"
+            android:id="@+id/sierpinski_strokeWidthLabel"
             android:layout_width="108dp"
             android:layout_height="21dp"
             android:layout_marginStart="16dp"
@@ -224,11 +224,11 @@
             android:text="ESCAPE RADIUS"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.785"
-            app:layout_constraintStart_toEndOf="@+id/mandelbrot_maxIterationsLabel"
-            app:layout_constraintTop_toBottomOf="@+id/textFractalType" />
+            app:layout_constraintStart_toEndOf="@+id/sierpinski_depthLabel"
+            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_settingsLabel" />
 
         <TextView
-            android:id="@+id/mandelbrot_maxIterationsLabel"
+            android:id="@+id/sierpinski_depthLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -237,7 +237,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.13"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textFractalType" />
+            app:layout_constraintTop_toBottomOf="@+id/mandelbrot_settingsLabel" />
 
         <Button
             android:id="@+id/mandelbrot_resetBtn"

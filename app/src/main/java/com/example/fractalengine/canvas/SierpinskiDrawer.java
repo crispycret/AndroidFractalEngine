@@ -13,25 +13,27 @@ import java.util.ArrayList;
 
 public class SierpinskiDrawer extends FractalDrawer {
 
-    public int DEFAULT_MAX_DEPTH = 3;
-    public int DEFAILT_STROKE_WIDTH = 7;
+    public static int MAX_DEPTH_DEFAULT = 4;
+    public static int STROKE_WIDTH_DEFAULT = 6;
 
-    public int depth = 3;
-    public int strokeWidth = 7;
+    public int depth = 4;
+    public int strokeWidth = 6;
 
     public SierpinskiDrawer(SurfaceHolder surfaceHolder, Bundle bundle) {
         super(surfaceHolder, bundle);
         if (bundle == null) {
           useDefaultSettings();
         } else {
+            Log.w("Sierpinski", "Using bundle");
+            Log.w("Sierpinski Bundle", bundle.toString());
             useBundleSettings();
         }
     }
 
 
     public void useDefaultSettings () {
-        depth = DEFAULT_MAX_DEPTH;
-        strokeWidth = DEFAILT_STROKE_WIDTH;
+        depth = MAX_DEPTH_DEFAULT;
+        strokeWidth = STROKE_WIDTH_DEFAULT;
     }
 
     public void useBundleSettings() {
@@ -54,18 +56,26 @@ public class SierpinskiDrawer extends FractalDrawer {
         paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.FILL);
         paint.setStrokeWidth(strokeWidth);
+        Log.w("Sierpinski Depth", String.valueOf(depth));
+        Log.w("Sierpinski Stroke Width", String.valueOf(strokeWidth));
 
         int width = canvas.getWidth();
         int height = canvas.getHeight();
 
+        // Since the Sierpinksi is a perfect triangle we must center the height
+        // Find the difference of the width and height and divide by two
+
+
+//        float offsetY = 0.05f;
+        float offsetY = (height / 2) - (height - width) / 2;
         float offsetX = 0.025f;
-        float offsetY = 0.05f;
         float startX = width * offsetX;;
-        float startY = height - (height * offsetY * 2);
+//        float startY = height - (height * offsetY * 2);
+        float startY = height - offsetY;
         float sidelen = width - (width * offsetX * 2);
         Float[] pos = new Float[] {startX, startY};
 
-        createSierpinskiTriangle(pos, sidelen, 1, canvas, paint);
+        createSierpinskiTriangle(pos, sidelen, depth, canvas, paint);
 
     }
 
