@@ -17,61 +17,27 @@ import com.example.fractalengine.canvas.MandelbrotDrawer;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MandelbrotSettingsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class MandelbrotSettingsFragment extends BundlingFragment {
 
-    public static final int DEFAULT_MAX_ITERATIONS = 100;
-    public static final double DEFAULT_ESCAPE_RADIUS = 2.0;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public MandelbrotSettingsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MandelbrotSettingsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MandelbrotSettingsFragment newInstance(String param1, String param2) {
-        MandelbrotSettingsFragment fragment = new MandelbrotSettingsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
 
         // ToDo: Learning... How to use saved states.
         if (savedInstanceState != null) {
 //            Bundle bundle = savedInstanceState.getBundle("MandelbrotSettings");
 //            Log.w("MandelbrotSettings", bundle.toString());
         }
-
-
     }
 
     /**
@@ -94,7 +60,6 @@ public class MandelbrotSettingsFragment extends BundlingFragment {
         resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.w("BUTTON:", "WORKING");
                 reset();
             }
         });
@@ -112,40 +77,25 @@ public class MandelbrotSettingsFragment extends BundlingFragment {
 //        outState.putBundle("MandelbrotSettings", createBundle());
     }
 
+    public String getEditTextValue (int id) {
+        return ((EditText)getActivity().findViewById(id)).getText().toString();
+    }
+
     /**
      * Return settings for the mandelbrot as a Bundle.
      * @return -> <code>Bundle</code>
      */
     @Override
     public Bundle createBundle () {
+        String escapeRadius = getEditTextValue(R.id.mandelbrot_escapeRadius);
+        String maxIterations = getEditTextValue(R.id.mandelbrot_maxIterations);
+        String realStart = getEditTextValue(R.id.mandelbrot_realStart);
+        String realEnd = getEditTextValue(R.id.mandelbrot_realEnd);
+        String imaginaryStart = getEditTextValue(R.id.mandelbrot_imaginaryStart);
+        String imaginaryEnd = getEditTextValue(R.id.mandelbrot_imaginaryEnd);
+        String colorRange = getEditTextValue(R.id.mandelbrot_colorRange);
+
         Bundle b = new Bundle();
-        String escapeRadius = ((EditText)getActivity()
-                .findViewById(R.id.mandelbrot_escapeRadius))
-                .getText().toString();
-        String maxIterations = ((EditText)getActivity()
-                .findViewById(R.id.mandelbrot_maxIterations))
-                .getText().toString();
-
-        String realStart = ((EditText)getActivity()
-                .findViewById(R.id.mandelbrot_realStart))
-                .getText().toString();
-
-        String realEnd = ((EditText)getActivity()
-                .findViewById(R.id.mandelbrot_realEnd))
-                .getText().toString();
-
-        String imaginaryStart = ((EditText)getActivity()
-                .findViewById(R.id.mandelbrot_imaginaryStart))
-                .getText().toString();
-
-        String imaginaryEnd = ((EditText)getActivity()
-                .findViewById(R.id.mandelbrot_imaginaryEnd))
-                .getText().toString();
-
-        String colorRange = ((EditText)getActivity()
-                .findViewById(R.id.mandelbrot_colorRange))
-                .getText().toString();
-
         b.putString("fractalType", "Mandelbrot");
         b.putInt("maxIterations", Integer.valueOf(maxIterations));
         b.putDouble("escapeRadius", Double.valueOf(escapeRadius));
