@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">FractalEnginV1</string>
+    <string name="app_name">FractalEngine</string>
     <string name="selectedFractal">Mandelbrot</string>
 </resources>
