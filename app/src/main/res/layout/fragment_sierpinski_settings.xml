@@ -56,6 +56,51 @@
             app:layout_constraintStart_toStartOf="@+id/sierpinski_depthLabel"
             app:layout_constraintTop_toBottomOf="@+id/sierpinski_depthLabel" />
 
+        <EditText
+            android:id="@+id/sierpinski_color1"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="#ff00ff"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/sierpinski_color1Label"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_color1Label"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color1Label" />
+
+        <EditText
+            android:id="@+id/sierpinski_color2"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="#0000ff"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/sierpinski_color2Label"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_color2Label"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color2Label" />
+
+        <EditText
+            android:id="@+id/sierpinski_color3"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="#ff0000"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/sierpinski_color3Label"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_color3Label"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color3Label" />
+
         <TextView
             android:id="@+id/sierpinski_strokeWidthLabel"
             android:layout_width="108dp"
@@ -77,17 +122,62 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sd" />
 
+        <TextView
+            android:id="@+id/sierpinski_color1Label"
+            android:layout_width="111dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Color 1"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color" />
+
+        <TextView
+            android:id="@+id/sierpinski_color2Label"
+            android:layout_width="111dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="8dp"
+            android:text="Color 2"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/sierpinski_color1Label"
+            app:layout_constraintStart_toEndOf="@+id/sierpinski_color1Label" />
+
+        <TextView
+            android:id="@+id/sierpinski_color3Label"
+            android:layout_width="111dp"
+            android:layout_height="27dp"
+            android:layout_marginEnd="16dp"
+            android:text="Color 3"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/sierpinski_color2Label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sierpinski_color2Label" />
+
+        <TextView
+            android:id="@+id/sierpinski_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Color Gradient"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_strokeWidth" />
+
         <Button
             android:id="@+id/mandelbrot_resetBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="Reset"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sierpinski_strokeWidth" />
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

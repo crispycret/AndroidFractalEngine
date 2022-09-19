@@ -14,6 +14,9 @@ import android.widget.EditText;
 import com.example.fractalengine.R;
 import com.example.fractalengine.canvas.SierpinskiDrawer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
@@ -67,7 +70,9 @@ public class SierpinskiSettingsFragment extends BundlingFragment {
 
     public void reset () {
         setEditText(R.id.sierpinski_depth, SierpinskiDrawer.MAX_DEPTH_DEFAULT);
-        setEditText(R.id.sierpinski_strokeWidth, SierpinskiDrawer.STROKE_WIDTH_DEFAULT);
+        setEditText(R.id.sierpinski_color1, SierpinskiDrawer.COLOR_GRADIENT_DEFAULT[0]);
+        setEditText(R.id.sierpinski_color2, SierpinskiDrawer.COLOR_GRADIENT_DEFAULT[1]);
+        setEditText(R.id.sierpinski_color3, SierpinskiDrawer.COLOR_GRADIENT_DEFAULT[2]);
     }
 
 
@@ -76,9 +81,16 @@ public class SierpinskiSettingsFragment extends BundlingFragment {
         String depth = getEditTextValue(R.id.sierpinski_depth);
         String strokeWidth = getEditTextValue(R.id.sierpinski_strokeWidth);
 
+        String color1 = getEditTextValue(R.id.sierpinski_color1);
+        String color2 = getEditTextValue(R.id.sierpinski_color2);
+        String color3 = getEditTextValue(R.id.sierpinski_color3);
+
+        String[] colors = new String[] {color1, color2, color3};
+
         Bundle b = new Bundle();
         b.putInt("depth", Integer.valueOf(depth));
         b.putInt("strokeWidth", Integer.valueOf(strokeWidth));
+        b.putStringArrayList("colors", new ArrayList<String>(Arrays.asList(colors)));
 
         Log.w("Sierpinski Bundle:", b.toString());
 
