@@ -12,14 +12,28 @@ import android.view.View;
 
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SierpinskiDrawer extends FractalDrawer {
 
     public static int MAX_DEPTH_DEFAULT = 4;
     public static int STROKE_WIDTH_DEFAULT = 6;
+    public static String[] COLOR_GRADIENT_DEFAULT = new String[] {
+            "#ff00ff", "#0000ff", "#ff0000"
+    };
 
-    public int depth = 4;
-    public int strokeWidth = 6;
+    public String force_hex_color(String color, String defaultColor) {
+        boolean isHexColor = true;
+        // Apply hex regex or use default color
+        if (isHexColor)
+            return color;
+        return defaultColor;
+    }
+
+    public int depth = MAX_DEPTH_DEFAULT;
+    public int strokeWidth = STROKE_WIDTH_DEFAULT;
+    public ArrayList<String> colors = new ArrayList<String>(Arrays.asList(COLOR_GRADIENT_DEFAULT));
 
     public SierpinskiDrawer(SurfaceHolder surfaceHolder, Bundle bundle) {
         super(surfaceHolder, bundle);
@@ -64,10 +78,6 @@ public class SierpinskiDrawer extends FractalDrawer {
         int width = canvas.getWidth();
         int height = canvas.getHeight();
 
-//        paint.setShader(new LinearGradient(
-//                0, 0, 0, height, Color.BLACK, Color.WHITE, Shader.TileMode.MIRROR
-//        ));
-
 //
 //        gradient = ctx.createLinearGradient(canvasHeight/2, 0, canvasHeight, canvasWidth);
 //        gradient.addColorStop(0, "magenta");
@@ -76,29 +86,33 @@ public class SierpinskiDrawer extends FractalDrawer {
 
 
 
-        int colors[] = new int[3];
-        float[] colorPositions = new float[4];
-
-        colors[0] = Color.MAGENTA;
-        colors[1] = Color.BLUE;
-        colors[2] = Color.RED;
-
-        paint.setShader(new LinearGradient(
-                0, height/2, width, height, colors, null, Shader.TileMode.MIRROR
-        ));
-
         // Since the Sierpinksi is a perfect triangle we must center the height
         // Find the difference of the width and height and divide by two
-
-
-//        float offsetY = 0.05f;
         float offsetY = (height / 2) - (height - width) / 2;
         float offsetX = 0.025f;
-        float startX = width * offsetX;;
-//        float startY = height - (height * offsetY * 2);
-        float startY = height - offsetY;
+        float startX = width * offsetX;
+        float startY = height - (offsetY / 2);
         float sidelen = width - (width * offsetX * 2);
         Float[] pos = new Float[] {startX, startY};
+
+
+
+        int[] _colors = new int[colors.size()];
+
+
+        int i=0;
+        for (String color : colors) {
+            Log.w("Color:", String.valueOf(Color.parseColor(color)));
+            _colors[i] = Color.parseColor(color);
+            i++;
+        }
+
+
+        paint.setShader(new LinearGradient(
+                startX, startY, width-startX, height-startY,
+                _colors, null, Shader.TileMode.MIRROR
+        ));
+
 
         createSierpinskiTriangle(pos, sidelen, depth, canvas, paint);
 
