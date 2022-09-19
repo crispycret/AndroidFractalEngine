@@ -57,7 +57,7 @@
             app:layout_constraintTop_toBottomOf="@+id/sierpinski_depthLabel" />
 
         <EditText
-            android:id="@+id/sierpinski_depth2"
+            android:id="@+id/sierpinski_color1"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -72,7 +72,7 @@
             app:layout_constraintTop_toBottomOf="@+id/sierpinski_color1Label" />
 
         <EditText
-            android:id="@+id/sierpinski_depth3"
+            android:id="@+id/sierpinski_color2"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -87,7 +87,7 @@
             app:layout_constraintTop_toBottomOf="@+id/sierpinski_color2Label" />
 
         <EditText
-            android:id="@+id/sierpinski_depth4"
+            android:id="@+id/sierpinski_color3"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -177,7 +177,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sierpinski_depth3" />
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

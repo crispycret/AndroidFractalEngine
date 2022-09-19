@@ -50,11 +50,13 @@ public class SierpinskiDrawer extends FractalDrawer {
     public void useDefaultSettings () {
         depth = MAX_DEPTH_DEFAULT;
         strokeWidth = STROKE_WIDTH_DEFAULT;
+        colors = new ArrayList<String>(Arrays.asList(COLOR_GRADIENT_DEFAULT));
     }
 
     public void useBundleSettings() {
         depth = bundle.getInt("depth");
         strokeWidth = bundle.getInt("strokeWidth");
+        colors = bundle.getStringArrayList("colors");
     }
 
     @Override
