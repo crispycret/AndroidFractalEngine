@@ -28,6 +28,16 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
+        <TextView
+            android:id="@+id/sierpinski_strokeWidthLabel"
+            android:layout_width="108dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="48dp"
+            android:text="STROKE WIDTH"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/sierpinski_depthLabel"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <EditText
             android:id="@+id/sierpinski_strokeWidth"
             android:layout_width="110dp"
@@ -40,6 +50,17 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/sierpinski_depth"
             app:layout_constraintEnd_toEndOf="@+id/sierpinski_strokeWidthLabel"
             app:layout_constraintStart_toStartOf="@+id/sierpinski_strokeWidthLabel" />
+
+        <TextView
+            android:id="@+id/sierpinski_depthLabel"
+            android:layout_width="111dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="32dp"
+            android:text="DEPTH"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sd" />
 
         <EditText
             android:id="@+id/sierpinski_depth"
@@ -55,6 +76,18 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/sierpinski_depthLabel"
             app:layout_constraintTop_toBottomOf="@+id/sierpinski_depthLabel" />
+
+        <TextView
+            android:id="@+id/sierpinski_colorGradientLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Color Gradient"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_strokeWidth" />
 
         <EditText
             android:id="@+id/sierpinski_color1"
@@ -102,27 +135,6 @@
             app:layout_constraintTop_toBottomOf="@+id/sierpinski_color3Label" />
 
         <TextView
-            android:id="@+id/sierpinski_strokeWidthLabel"
-            android:layout_width="108dp"
-            android:layout_height="21dp"
-            android:layout_marginEnd="48dp"
-            android:text="STROKE WIDTH"
-            android:textAlignment="center"
-            app:layout_constraintBaseline_toBaselineOf="@+id/sierpinski_depthLabel"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/sierpinski_depthLabel"
-            android:layout_width="111dp"
-            android:layout_height="27dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="32dp"
-            android:text="DEPTH"
-            android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sd" />
-
-        <TextView
             android:id="@+id/sierpinski_color1Label"
             android:layout_width="111dp"
             android:layout_height="27dp"
@@ -131,16 +143,16 @@
             android:text="Color 1"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color" />
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_colorGradientLabel" />
 
         <TextView
             android:id="@+id/sierpinski_color2Label"
             android:layout_width="111dp"
             android:layout_height="27dp"
-            android:layout_marginStart="8dp"
             android:text="Color 2"
             android:textAlignment="center"
             app:layout_constraintBaseline_toBaselineOf="@+id/sierpinski_color1Label"
+            app:layout_constraintEnd_toStartOf="@+id/sierpinski_color3Label"
             app:layout_constraintStart_toEndOf="@+id/sierpinski_color1Label" />
 
         <TextView
@@ -154,20 +166,38 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sierpinski_color2Label" />
 
-        <TextView
-            android:id="@+id/sierpinski_color"
+        <Button
+            android:id="@+id/sierpinski_colorPicker1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Color Gradient"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sierpinski_strokeWidth" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/sierpinski_color1"
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_color1"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color1"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/mandelbrot_resetBtn"
+            android:id="@+id/sierpinski_colorPicker2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/sierpinski_color2"
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_color2"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color2"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/sierpinski_colorPicker3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/sierpinski_color3"
+            app:layout_constraintStart_toStartOf="@+id/sierpinski_color3"
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color3"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/sierpinski_resetBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -177,7 +207,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sierpinski_color2" />
+            app:layout_constraintTop_toBottomOf="@+id/sierpinski_colorPicker2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
