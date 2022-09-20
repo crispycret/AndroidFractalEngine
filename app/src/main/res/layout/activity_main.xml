@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        android:name="com.example.fractalengine.fragments.MandelbrotSettingsFragment"
+        android:name="com.bnadeau.fractalengine.fragments.MandelbrotSettingsFragment"
         tools:layout="@layout/fragment_mandelbrot_settings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
