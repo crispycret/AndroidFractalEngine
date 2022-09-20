@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +35,6 @@ public class MandelbrotSettingsFragment extends BundlingFragment {
         // ToDo: Learning... How to use saved states.
         if (savedInstanceState != null) {
 //            Bundle bundle = savedInstanceState.getBundle("MandelbrotSettings");
-//            Log.w("MandelbrotSettings", bundle.toString());
         }
     }
 
@@ -105,7 +103,6 @@ public class MandelbrotSettingsFragment extends BundlingFragment {
         b.putDouble("imaginaryEnd", Double.valueOf(imaginaryEnd));
         b.putInt("colorRange", Integer.valueOf(colorRange));
 
-        Log.w("Mandelbrot Bundle:", b.toString());
 
         return b;
     }

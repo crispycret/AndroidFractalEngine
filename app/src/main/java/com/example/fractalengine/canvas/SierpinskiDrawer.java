@@ -6,14 +6,11 @@ import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.View;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class SierpinskiDrawer extends FractalDrawer {
 
@@ -40,8 +37,6 @@ public class SierpinskiDrawer extends FractalDrawer {
         if (bundle == null) {
           useDefaultSettings();
         } else {
-            Log.w("Sierpinski", "Using bundle");
-            Log.w("Sierpinski Bundle", bundle.toString());
             useBundleSettings();
         }
     }
@@ -61,21 +56,17 @@ public class SierpinskiDrawer extends FractalDrawer {
 
     @Override
     public void draw(View view) {
-        Log.w("Sierpinski: ", "draw()");
         Canvas canvas = surfaceHolder.lockCanvas();
         _draw(canvas);
         surfaceHolder.unlockCanvasAndPost(canvas);
     }
 
     public void _draw(Canvas canvas) {
-        Log.w("Sierpinski: ", "_draw()");
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.FILL);
         paint.setStrokeWidth(strokeWidth);
-        Log.w("Sierpinski Depth", String.valueOf(depth));
-        Log.w("Sierpinski Stroke Width", String.valueOf(strokeWidth));
 
         int width = canvas.getWidth();
         int height = canvas.getHeight();
@@ -104,7 +95,6 @@ public class SierpinskiDrawer extends FractalDrawer {
 
         int i=0;
         for (String color : colors) {
-            Log.w("Color:", String.valueOf(Color.parseColor(color)));
             _colors[i] = Color.parseColor(color);
             i++;
         }
@@ -127,7 +117,6 @@ public class SierpinskiDrawer extends FractalDrawer {
         Float[] pos, float sidelen, int depth, Canvas canvas, Paint paint
     ) {
 
-        Log.w("Depth: ", String.valueOf(depth));
         float innerTriangleSidelen = sidelen / 2; // side length of inner triangles is half the side length of the outer triangle
         ArrayList<Float[]> innerTrianglePositions = new ArrayList<Float[]>();
 

@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,7 +106,6 @@ public class SierpinskiSettingsFragment extends BundlingFragment {
 
 
     public void reset () {
-        Log.w("reset:", "start");
         Activity activity = getActivity();
         Utils.setEditTextValue(activity, R.id.sierpinski_depth, SierpinskiDrawer.MAX_DEPTH_DEFAULT);
         Utils.setEditTextValue(activity, R.id.sierpinski_strokeWidth, SierpinskiDrawer.STROKE_WIDTH_DEFAULT);
@@ -120,7 +118,6 @@ public class SierpinskiSettingsFragment extends BundlingFragment {
                 Color.parseColor(SierpinskiDrawer.COLOR_GRADIENT_DEFAULT[1]));
         Utils.changeButtonColor(activity, R.id.sierpinski_colorPicker3,
                 Color.parseColor(SierpinskiDrawer.COLOR_GRADIENT_DEFAULT[2]));
-        Log.w("reset:", "end");
     }
 
 

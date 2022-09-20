@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
@@ -40,9 +39,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.w("MAIN ACTIVITY: ", "OnCreate");
-        Log.w("SPINNER: ", String.valueOf(selectedSpinner));
-
         ((Spinner)findViewById(R.id.fractalTypeSpinner)).setSelection(selectedSpinner);
 
         if (savedInstanceState == null) {
@@ -71,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         for (BundlingFragment b : fragments) {
          s += b.getClass().toString() + ", ";
         }
-        Log.w("FRAGMENTS:", s);
     }
 
 
@@ -104,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 String item = adapterView.getSelectedItem().toString();
                 selectedSpinner = i;
 
-                Log.w("Selected:", item);
                 if (item.equals("Mandelbrot") ) {
                     displayFragment(mandelbrotFragment);
                 } else if (item.equals("Sierpinski")) {
